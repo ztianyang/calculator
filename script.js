@@ -9,6 +9,7 @@ const maxLength = 14;
 const output = document.querySelector("#output");
 const digitButtons = document.querySelectorAll(".digit");
 const operatorButtons = document.querySelectorAll(".operator");
+const clearButton = document.querySelector("#clear");
 
 function add(num1, num2) {
     return num1 + num2;
@@ -82,4 +83,13 @@ operatorButtons.forEach((operatorButton) => {
             output.textContent = display;
         }
     });
+});
+
+clearButton.addEventListener("click", () => {
+    num1 = null;
+    num2 = null;
+    op = "";
+    error = false;
+    display = "0";
+    output.textContent = display;
 });
