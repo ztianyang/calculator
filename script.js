@@ -10,6 +10,7 @@ const output = document.querySelector("#output");
 const digitButtons = document.querySelectorAll(".digit");
 const operatorButtons = document.querySelectorAll(".operator");
 const clearButton = document.querySelector("#clear");
+const equalButton = document.querySelector("#equal");
 
 function add(num1, num2) {
     return num1 + num2;
@@ -92,4 +93,18 @@ clearButton.addEventListener("click", () => {
     error = false;
     display = "0";
     output.textContent = display;
+});
+
+equalButton.addEventListener("click", () => {
+    if (!error) {
+        if (num1 !== null) {
+            num2 = Number.parseFloat(display);
+            let result = operate(num1, num2, op);
+            display = `${result}`;
+            num1 = null;
+            num2 = null;
+        }
+        op = "";
+        output.textContent = display;
+    }
 });
