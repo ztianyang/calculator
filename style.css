@@ -43,6 +43,10 @@ button.operator {
     background-color: #AAFF80;
 }
 
+#equal {
+    background-color: #99FFEE;
+}
+
 button, #output {
     font-family: monospace;
 }
