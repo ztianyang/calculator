@@ -14,16 +14,20 @@ const equalButton = document.querySelector("#equal");
 const decimalButton = document.querySelector("#decimal");
 const negationButton = document.querySelector("#negation");
 
+function round(num) {
+    return Math.round(num * Math.pow(10, 7)) / Math.pow(10, 7);
+}
+
 function add(num1, num2) {
-    return num1 + num2;
+    return round(num1 + num2);
 }
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return round(num1 - num2);
 }
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return round(num1 * num2);
 }
 
 function divide(num1, num2) {
@@ -31,7 +35,7 @@ function divide(num1, num2) {
         error = true;
         return "MATH ERROR";
     }
-    return num1 / num2;
+    return round(num1 / num2);
 }
 
 function operate(num1, num2, op) {
