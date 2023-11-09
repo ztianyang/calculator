@@ -23,3 +23,17 @@ function divide(num1, num2) {
     }
     return num1 / num2;
 }
+
+function operate(num1, num2, op) {
+    if (op === "+") {
+        return add(num1, num2);
+    } else if (op === "-") {
+        return subtract(num1, num2);
+    } else if (op === "*") {
+        return multiply(num1, num2);
+    } else if (op === "/") {
+        return divide(num1, num2);
+    } else {
+        return "UNKNOWN OPERATOR";
+    }
+}
