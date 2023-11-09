@@ -25,7 +25,7 @@ function multiply(num1, num2) {
 function divide(num1, num2) {
     if (num2 === 0) {
         error = true;
-        return "CANNOT DIVIDE BY 0";
+        return "MATH ERROR";
     }
     return num1 / num2;
 }
@@ -41,7 +41,7 @@ function operate(num1, num2, op) {
         return divide(num1, num2);
     } else {
         error = true;
-        return "UNKNOWN OPERATOR";
+        return "OPERATOR ERROR";
     }
 }
 
