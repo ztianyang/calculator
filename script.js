@@ -53,14 +53,18 @@ function operate(num1, num2, op) {
     }
 }
 
+function checkOpEntered() {
+    if (op !== "" && num1 === null) {
+        num1 = Number.parseFloat(display);
+        display = "0";
+    }
+}
+
 digitButtons.forEach((digitButton) => {
     digitButton.addEventListener("click", (e) => {
         if (!error) {
             let digit = e.target.textContent;
-            if (op !== "" && num1 === null) {
-                num1 = Number.parseFloat(display);
-                display = "0";
-            }
+            checkOpEntered();
             if (display === "0") {
                 display = digit;
             } else {
@@ -117,10 +121,7 @@ equalButton.addEventListener("click", () => {
 
 decimalButton.addEventListener("click", () => {
     if (!error) {
-        if (op !== "" && num1 === null) {
-            num1 = Number.parseFloat(display);
-            display = "0";
-        }
+        checkOpEntered();
         if (!display.includes(".")) {
             display = display + ".";
         }
@@ -130,10 +131,7 @@ decimalButton.addEventListener("click", () => {
 
 negationButton.addEventListener("click", () => {
     if (!error) {
-        if (op !== "" && num1 === null) {
-            num1 = Number.parseFloat(display);
-            display = "0";
-        }
+        checkOpEntered();
         if (display !== "0") {
             if (display[0] === "-") {
                 display = display.slice(1);
