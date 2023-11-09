@@ -11,6 +11,7 @@ const digitButtons = document.querySelectorAll(".digit");
 const operatorButtons = document.querySelectorAll(".operator");
 const clearButton = document.querySelector("#clear");
 const equalButton = document.querySelector("#equal");
+const decimalButton = document.querySelector("#decimal");
 
 function add(num1, num2) {
     return num1 + num2;
@@ -105,6 +106,19 @@ equalButton.addEventListener("click", () => {
             num2 = null;
         }
         op = "";
+        output.textContent = display;
+    }
+});
+
+decimalButton.addEventListener("click", () => {
+    if (!error) {
+        if (op !== "" && num1 === null) {
+            num1 = Number.parseFloat(display);
+            display = "0";
+        }
+        if (!display.includes(".")) {
+            display = display + ".";
+        }
         output.textContent = display;
     }
 });
